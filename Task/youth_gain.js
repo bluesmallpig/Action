@@ -80,7 +80,7 @@ if ($.isNode()) {
 function GainStart() {
     return new Promise((resolve, reject) => {
        let url = {
-            url: `https://ios.baertt.com/v5/task/browse_start.json`,
+            url: `https://ios.baertt.com/v5/Nameless/adlickstart.json`,
             headers: {
             'User-Agent': 'KDApp/1.7.8 (iPhone; iOS 14.0; Scale/3.00)',
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -105,7 +105,7 @@ function GainStart() {
 function GainEnd() {
     return new Promise((resolve, reject) => {
        let url = {
-            url: `https://ios.baertt.com/v5/task/browse_end.json`,
+            url: `https://ios.baertt.com/v5/Nameless/adlickend.json`,
             headers: {
             'User-Agent': 'KDApp/1.7.8 (iPhone; iOS 14.0; Scale/3.00)',
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -126,7 +126,7 @@ function GainEnd() {
 }
 
 function GetCookie() {
-if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/browse_start\.json/)) {
+if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/adlickstart.json\.json/)) {
   const startbodyVal = $request.body;
   if(startbodys){
   if(startbodys.indexOf(startbodyVal)>-1){
@@ -144,7 +144,7 @@ if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/browse_sta
      $.msg($.name,'获取开始请求成功');
    };
 
-if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/browse_end\.json/)) {
+if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/adlickend\.json/)) {
   const endbodyVal = $request.body
   if(endbodys){
     if(endbodys.indexOf(endbodyVal)>-1){
