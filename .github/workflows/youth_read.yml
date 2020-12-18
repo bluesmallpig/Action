@@ -15,6 +15,7 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
     env:
       YOUTH_START: ${{ secrets.YOUTH_READ }}
+      YOUTH_END: ${{ secrets.YOUTH_READ }}
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js 12.x
@@ -25,9 +26,15 @@ jobs:
         run: |
           npm install
           
-      - name: '运行 【中青看点自动阅读】'
+      - name: '运行 【中青看点自动阅读START】'
         if: env.YOUTH_START
         run: |
           node Task/youth_gain.js
         env:
           YOUTH_START: ${{ secrets.YOUTH_READ }}
+      - name: '运行 【中青看点自动阅读END】'
+        if: env.YOUTH_END
+        run: |
+          node Task/youth_gain.js
+        env:
+          YOUTH_END: ${{ secrets.YOUTH_READ }}
