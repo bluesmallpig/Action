@@ -126,6 +126,7 @@ function GainEnd() {
 }
 
 function GetCookie() {
+   let tempStartBosy = '';
 if ($request && $request.method != 'OPTIONS' && $request.url.match(/Nameless\/adlickstart\.json/)) {
   const startbodyVal = $request.body;
   if(startbodys){
@@ -134,14 +135,16 @@ if ($request && $request.method != 'OPTIONS' && $request.url.match(/Nameless\/ad
      return
    }else if(startbodys.indexOf(startbodyVal)==-1)
      {
-        startbodys  += "&"+startbodyVal 
+        tempStartBosy = startbodyVal;
+        //startbodys  += "&"+startbodyVal 
      } 
    }  else {
-        startbodys = $request.body
+        tempStartBosy = startbodyVal;
+        //startbodys = $request.body
    } 
-     $.setdata(startbodys,'youth_start')
-     $.log("看看赚开始请求: "+startbodyVal)
-     $.msg($.name,'获取开始请求成功');
+     //$.setdata(startbodys,'youth_start')
+     $.log("看看赚临时的开始请求: "+startbodyVal)
+     $.msg($.name,'获取临时的开始请求成功');
    };
 
 if ($request && $request.method != 'OPTIONS' && $request.url.match(/Nameless\/adlickend\.json/)) {
@@ -151,11 +154,15 @@ if ($request && $request.method != 'OPTIONS' && $request.url.match(/Nameless\/ad
       $.msg($.name,'获取任务开始请求重复，本次跳过');
       return
     } else if(endbodys.indexOf(endbodyVal)==-1){
-        endbodys += "&"+endbodyVal 
+        startbodys  += "&" + tempStartBosy
+        $.msg($.name,'获取开始请求成功');
+        endbodys += "&" + endbodyVal 
     }
    }else {
+        startbodys = $request.body
         endbodys = $request.body
    }
+     $.setdata(startbodys,'youth_start')
      $.setdata(endbodys,'youth_end')
      $.log("看看赚结束请求: "+endbodyVal)
      $.msg($.name,'获取任务结束请求成功');
