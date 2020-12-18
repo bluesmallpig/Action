@@ -126,7 +126,7 @@ function GainEnd() {
 }
 
 function GetCookie() {
-if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/adlickstart.json\.json/)) {
+if ($request && $request.method != 'OPTIONS' && $request.url.match(/Nameless\/adlickstart\.json/)) {
   const startbodyVal = $request.body;
   if(startbodys){
   if(startbodys.indexOf(startbodyVal)>-1){
@@ -144,7 +144,7 @@ if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/adlickstar
      $.msg($.name,'获取开始请求成功');
    };
 
-if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/adlickend\.json/)) {
+if ($request && $request.method != 'OPTIONS' && $request.url.match(/Nameless\/adlickend\.json/)) {
   const endbodyVal = $request.body
   if(endbodys){
     if(endbodys.indexOf(endbodyVal)>-1){
