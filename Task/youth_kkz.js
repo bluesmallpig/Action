@@ -18,6 +18,7 @@ let StartBody = [], EndBody = [], gainscore = Number();
 let startArr = [],endArr = [];
 let startbodys = $.getdata('youth_kkz_start')
 let endbodys = $.getdata('youth_kkz_end')
+let tempStartBody = $.getdata('youth_temp_start')
 if (isGetCookie = typeof $request !==`undefined`) {
    GetCookie();
    $.done()
@@ -139,7 +140,7 @@ if ($request && $request.method != 'OPTIONS' && $request.url.match(/Nameless\/ad
    }  else {
         startbodys = $request.body
    } 
-     //$.setdata(startbodys,'youth_start')
+     $.setdata(startbodys,'youth_temp_start')
      $.log("看看赚开始请求: " + startbodyVal)
      $.msg($.name,'看看赚开始请求');
    };
@@ -152,9 +153,11 @@ if ($request && $request.method != 'OPTIONS' && $request.url.match(/Nameless\/ad
       return
     } else if(endbodys.indexOf(endbodyVal)==-1){
       endbodys += "&" + endbodyVal 
+      startbodys += "&" + tempStartBody 
     }
    } else {
       endbodys = $request.body
+      startbodys = tempStartBody
    }
      $.setdata(startbodys,'youth_kkz_start')
      $.msg($.name,'看看赚获取任务开始请求成功');
