@@ -162,8 +162,8 @@ if ($request && $request.method != 'OPTIONS' && $request.url.match(/Nameless\/ad
         startbodys = $request.body
         endbodys = $request.body
    }
-     $.setdata(startbodys,'youth_start')
-     $.setdata(endbodys,'youth_end')
+     $.setdata(startbodys,'youth_kkz_start')
+     $.setdata(endbodys,'youth_kkz_end')
      $.log("看看赚结束请求: "+endbodyVal)
      $.msg($.name,'获取任务结束请求成功');
   }
