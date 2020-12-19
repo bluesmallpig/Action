@@ -92,7 +92,7 @@ function GainStart() {
           let startres = JSON.parse(data);
            if(startres.items.comtele_state ==0){
              $.log("任务开始，"+startres.items.banner_id+startres.message)
-             await $.wait(30000);
+             await $.wait(10000);
              await GainEnd()
            } else if(startres.items.comtele_state ==1){
              $.log("任务:"+startres.items.banner_id+"已完成，本次跳过")
