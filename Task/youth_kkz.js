@@ -126,7 +126,7 @@ function GainEnd() {
 }
 
 function GetCookie() {
-   let tempStartBosy = '';
+   const tempStartBody = '';
 if ($request && $request.method != 'OPTIONS' && $request.url.match(/Nameless\/adlickstart\.json/)) {
   const startbodyVal = $request.body;
   if(startbodys){
@@ -135,11 +135,11 @@ if ($request && $request.method != 'OPTIONS' && $request.url.match(/Nameless\/ad
      return
    }else if(startbodys.indexOf(startbodyVal)==-1)
      {
-        tempStartBosy = startbodyVal;
+        tempStartBody = startbodyVal;
         //startbodys  += "&"+startbodyVal 
      } 
    }  else {
-        tempStartBosy = startbodyVal;
+        tempStartBody = startbodyVal;
         //startbodys = $request.body
    } 
      //$.setdata(startbodys,'youth_start')
@@ -154,7 +154,7 @@ if ($request && $request.method != 'OPTIONS' && $request.url.match(/Nameless\/ad
       $.msg($.name,'获取任务开始请求重复，本次跳过');
       return
     } else if(endbodys.indexOf(endbodyVal)==-1){
-        startbodys  += "&" + tempStartBosy
+        startbodys  += "&" + tempStartBody
         $.msg($.name,'获取开始请求成功');
         endbodys += "&" + endbodyVal 
     }
