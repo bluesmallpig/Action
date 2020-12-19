@@ -140,7 +140,7 @@ if ($request && $request.method != 'OPTIONS' && $request.url.match(/Nameless\/ad
    }  else {
         startbodys = $request.body
    } 
-     $.setdata(startbodys,'youth_temp_start')
+     $.setdata(startbodyVal,'youth_temp_start')
      $.log("看看赚开始请求: " + startbodyVal)
      $.msg($.name,'看看赚开始请求');
    };
