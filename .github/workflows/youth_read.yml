@@ -22,11 +22,6 @@ jobs:
       YOUTH_READ6: ${{ secrets.YOUTH_READ6 }}
       YOUTH_READ7: ${{ secrets.YOUTH_READ7 }}
       YOUTH_READ8: ${{ secrets.YOUTH_READ8 }}
-      YOUTH_READ_1: ${{ secrets.YOUTH_READ_1 }}
-      YOUTH_READ_2: ${{ secrets.YOUTH_READ_2 }}
-      YOUTH_READ_3: ${{ secrets.YOUTH_READ_3 }}
-      YOUTH_READ_4: ${{ secrets.YOUTH_READ_4 }}
-      YOUTH_READ_5: ${{ secrets.YOUTH_READ_5 }}
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js 12.x
@@ -88,33 +83,3 @@ jobs:
           node Task/Youth_Read.js
         env:
           YOUTH_READ: ${{ secrets.YOUTH_READ8 }}
-      - name: '运行 【中青看点自动阅读①】'
-        if: env.YOUTH_READ_1
-        run: |
-          node Task/Youth_Read.js
-        env:
-          YOUTH_READ: ${{ secrets.YOUTH_READ_1 }}
-      - name: '运行 【中青看点自动阅读②】'
-        if: env.YOUTH_READ_2
-        run: |
-          node Task/Youth_Read.js
-        env:
-          YOUTH_READ: ${{ secrets.YOUTH_READ_2 }}
-      - name: '运行 【中青看点自动阅读③】'
-        if: env.YOUTH_READ_3
-        run: |
-          node Task/Youth_Read.js
-        env:
-          YOUTH_READ: ${{ secrets.YOUTH_READ_3 }}
-      - name: '运行 【中青看点自动阅读④】'
-        if: env.YOUTH_READ_4
-        run: |
-          node Task/Youth_Read.js
-        env:
-          YOUTH_READ: ${{ secrets.YOUTH_READ_4 }}
-      - name: '运行 【中青看点自动阅读⑤】'
-        if: env.YOUTH_READ_5
-        run: |
-          node Task/Youth_Read.js
-        env:
-          YOUTH_READ: ${{ secrets.YOUTH_READ_5 }}
