@@ -6,7 +6,7 @@ name: 葱花视频自动阅读
 on:
   workflow_dispatch:
   schedule:
-     - cron: '*/30 1-2 * * *'
+     - cron: '*/30 1-3 * * *'
   watch:
     types: started
 jobs:
