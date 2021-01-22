@@ -16,6 +16,7 @@ jobs:
     env:
       YOUTHREAD_1: ${{ secrets.YOUTHREAD_1 }}
       YOUTHREAD_2: ${{ secrets.YOUTHREAD_2 }}
+      YOUTHREAD_3: ${{ secrets.YOUTHREAD_3 }}
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js 12.x
@@ -26,15 +27,21 @@ jobs:
         run: |
           npm install
           
-      - name: '运行 【中青看点自动阅读一】'
+      - name: '运行 【中青看点自动阅读一【3】】'
         if: env.YOUTHREAD_1
         run: |
           node Task/Youth_Read.js
         env:
           YOUTH_READ: ${{ secrets.YOUTHREAD_1 }}
-      - name: '运行 【中青看点自动阅读二】'
+      - name: '运行 【中青看点自动阅读二【3】】'
         if: env.YOUTHREAD_2
         run: |
           node Task/Youth_Read.js
         env:
           YOUTH_READ: ${{ secrets.YOUTHREAD_2 }}
+      - name: '运行 【中青看点自动阅读三【4】】'
+        if: env.YOUTHREAD_3
+        run: |
+          node Task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTHREAD_3 }}
