@@ -19,6 +19,7 @@ jobs:
       YOUTHREAD_3: ${{ secrets.YOUTHREAD_3 }}
       YOUTHREAD_4: ${{ secrets.YOUTHREAD_4 }}
       YOUTHREAD_5: ${{ secrets.YOUTHREAD_5 }}
+      YOUTHREAD_6: ${{ secrets.YOUTHREAD_6 }}
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js 12.x
@@ -59,4 +60,11 @@ jobs:
           node Task/Youth_Read.js
         env:
           YOUTH_READ: ${{ secrets.YOUTHREAD_5 }}
+      - name: '运行 【中青看点自动阅读六【5】】'
+        if: env.YOUTHREAD_6
+        run: |
+          node Task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTHREAD_6 }}
+
 
